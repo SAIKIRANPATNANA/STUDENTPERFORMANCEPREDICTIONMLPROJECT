@@ -44,13 +44,13 @@ class DataTransformation:
             input_features_train_array = preprocessor.fit_transform(input_features_train)
             save_object(
                 obj = preprocessor,
-                file_path = self.data_transformation_config.preprocessor_obj_filepath
+                filepath = self.data_transformation_config.preprocessor_obj_filepath
             )
             logging.info("Preprocessing object is saved")
             input_features_test_array = preprocessor.transform(input_features_test)
             train_array = np.c_[(input_features_train_array,np.array(target_feature_train))]
             test_array = np.c_[(input_features_test_array,np.array(target_feature_test))]
-            return (train_array, test_array, self.data_transformation_config.preprocessor_obj_filepath)
+            return (train_array, test_array)
         except Exception as e:
             raise CustomException(e,sys)
 

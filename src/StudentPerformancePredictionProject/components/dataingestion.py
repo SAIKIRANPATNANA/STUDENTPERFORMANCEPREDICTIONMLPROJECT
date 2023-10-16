@@ -2,7 +2,6 @@ import os
 import sys
 from src.StudentPerformancePredictionProject.exception import CustomException
 from src.StudentPerformancePredictionProject.logger import logging
-# from src.StudentPerformancePredictionProject.components.datatransformation import DataTransformationConfig,DataTransformation
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
