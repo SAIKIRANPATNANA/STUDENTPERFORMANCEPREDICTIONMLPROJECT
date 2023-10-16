@@ -1,6 +1,5 @@
 import sys
 from src.StudentPerformancePredictionProject.logger import logging
-# print('sai')
 def error_message_datail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
     filename = exc_tb.tb_frame.f_code.co_filename

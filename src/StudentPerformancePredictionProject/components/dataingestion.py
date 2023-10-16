@@ -2,6 +2,7 @@ import os
 import sys
 from src.StudentPerformancePredictionProject.exception import CustomException
 from src.StudentPerformancePredictionProject.logger import logging
+# from src.StudentPerformancePredictionProject.components.datatransformation import DataTransformationConfig,DataTransformation
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -15,9 +16,7 @@ class DataIngestionConfig:
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
-        print('sai')
     def initiate_data_ingestion(self):
-        print("Entered into the data ingestion method")
         logging.info("Entered into the data ingestion method")
         try:
             df = pd.read_csv('/home/user/Documents/ML DL PROJECTS/StudentPerformancePredictionMLProject/datasets/StudentsPerformance.csv')
