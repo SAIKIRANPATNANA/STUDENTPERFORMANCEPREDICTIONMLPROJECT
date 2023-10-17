@@ -20,8 +20,8 @@ class DataTransformation:
         self.data_transformation_config = DataTransformationConfig()
     def get_data_transformer_object(self):
         try:
-            num_features = ['reading score', 'writing score']
-            cat_features = ['gender','race/ethnicity','parental level of education','lunch','test preparation course']
+            num_features = ['reading_score', 'writing_score']
+            cat_features = ['gender','race','parental_level_of_education','lunch','test_preparation_course']
             num_pipeline = Pipeline(steps=[('imputer', SimpleImputer(strategy='median')),('scaler',StandardScaler())])
             cat_pipeline = Pipeline(steps=[('imputer', SimpleImputer(strategy='most_frequent')),('ohe',OneHotEncoder())])
             logging.info('Numerical pipeline and categorical pipeline are implemented')
@@ -36,7 +36,7 @@ class DataTransformation:
             logging.info("Reading Train Data and Test Data completed")
             logging.info("Getting Preprcessing Object")
             preprocessor = self.get_data_transformer_object()
-            target_col = 'math score'
+            target_col = 'math_score'
             input_features_train = train_data.drop(target_col,axis=1)
             target_feature_train = train_data[target_col]
             input_features_test = test_data.drop(target_col,axis=1)

@@ -18,7 +18,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered into the data ingestion method")
         try:
-            df = pd.read_csv('/home/user/Documents/ML DL PROJECTS/StudentPerformancePredictionMLProject/datasets/StudentsPerformance.csv')
+            df = pd.read_csv('/home/user/Documents/ML DL PROJECTS/StudentPerformancePredictionMLProject/datasets/studentsPerformance.csv')
             logging.info('Read the data as pandas dataframe')
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             logging.info('Train Test Split initiated')
